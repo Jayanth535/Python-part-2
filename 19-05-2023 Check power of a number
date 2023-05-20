@@ -1,0 +1,25 @@
+def power(n):
+
+    if n==1:
+
+        return 1
+
+    else:
+
+        m=0xAAAAAAAAA
+
+        if  n>0 and m&n==0 and n&(n-1)==0:
+
+            return 1,2,4
+
+        elif n>0 and n&(n-1)==0:
+
+            return 1,2
+
+        else:
+
+            return 1
+
+n=int(input())
+
+print(power(n))
