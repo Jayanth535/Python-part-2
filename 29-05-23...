@@ -1,0 +1,29 @@
+class Solution:
+
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+
+        stack=[]
+
+        nodes=[]
+
+        c=0
+
+        ptr=head
+
+        while ptr!=None:
+
+            c+=1
+
+            if c>=left and c<=right:
+
+                stack.append(ptr.val)
+
+                nodes.append(ptr)
+
+            ptr=ptr.next
+
+        for node in nodes:
+
+            node.val=stack.pop()
+
+        return head
